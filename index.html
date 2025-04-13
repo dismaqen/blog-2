@@ -4,61 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Redirecting...</title>
+  <title>Traffic Boosting</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Body styling untuk memastikan tampilan responsif */
     body {
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: #fafafa;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
       text-align: center;
+      margin: 0;
       padding: 20px;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
+    h1 { margin-bottom: 10px; }
+
+    /* Styling untuk iframe agar responsif di semua perangkat */
+    iframe {
+      width: 100%; /* Lebar 100% agar responsif */
+      height: 80vh; /* Menggunakan tinggi 80% dari viewport */
+      border: none; /* Menghilangkan border iframe */
     }
-    p {
-      font-size: 1.1em;
+
+    /* Responsif untuk perangkat dengan layar kecil (misalnya ponsel) */
+    @media (max-width: 600px) {
+      iframe {
+        height: 60vh; /* Menyesuaikan tinggi pada perangkat kecil */
+      }
     }
   </style>
 </head>
 <body>
   <h1>Redirecting...</h1>
-  <p>Hang tight, you're being redirected...</p>
+  <p>Please wait while we redirect you.</p>
+
+  <!-- Menampilkan iframe dengan konten -->
+  <iframe id="trafficFrame" src="https://phoampor.top/4/9209440" allow="autoplay; encrypted-media" loading="lazy"></iframe>
 
   <script>
-    // Loop scroll tiap 1.5 detik
-    let scrollY = 0;
-    setInterval(() => {
-      scrollY += 200;
-      window.scrollTo({ top: scrollY, behavior: 'smooth' });
-    }, 1500);
+    // Fungsi untuk melakukan scroll otomatis dalam iframe
+    function autoScrollInIframe() {
+      const iframe = document.getElementById('trafficFrame');
+      try {
+        // Memastikan bahwa kita bisa mengakses konten iframe
+        const iframeDocument = iframe.contentWindow.document;
+        iframeDocument.body.scrollBy(0, 500); // Scroll 500px ke bawah
+      } catch (e) {
+        console.error('Tidak bisa mengakses konten iframe:', e);
+      }
+    }
 
-    // Loop klik tiap 2 detik
-    setInterval(() => {
-      const clickEvent = new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-        view: window
-      });
+    // Looping fungsi scroll otomatis setiap 2 detik di dalam iframe
+    setInterval(autoScrollInIframe, 2000);
+
+    // Fungsi untuk melakukan scroll otomatis di halaman utama
+    function autoScrollInPage() {
+      window.scrollBy(0, 500); // Scroll 500px ke bawah di halaman utama
+    }
+
+    // Fungsi untuk melakukan klik otomatis di halaman utama
+    function autoClickInPage() {
+      var clickEvent = new MouseEvent('click', { bubbles: true, cancelable: true });
       document.body.dispatchEvent(clickEvent);
-    }, 2000);
+    }
+
+    // Looping fungsi scroll otomatis setiap 2 detik di halaman utama
+    setInterval(autoScrollInPage, 2000);
+
+    // Looping fungsi klik otomatis setiap 3 detik di halaman utama
+    setInterval(autoClickInPage, 3000);
 
     // Redirect setelah 2 detik
     setTimeout(() => {
-      window.location.href = "https://phoampor.top/4/9209440";
-    }, 2000);
+      window.location.href = "https://phoampor.top/4/9209440"; // Link baru yang kamu berikan
+    }, 2000); // Redirect setelah 2 detik
   </script>
 </body>
 </html>

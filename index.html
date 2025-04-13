@@ -4,21 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Redirecting...</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
-      background: #fff;
-      text-align: center;
-      padding-top: 100px;
+      background: #ffffff;
       color: #333;
-      height: 3000px; /* Biar bisa scroll */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.1em;
     }
   </style>
 </head>
 <body>
   <h1>Redirecting...</h1>
-  <p>Hold on... sending you to your destination!</p>
+  <p>Hang tight, you're being redirected...</p>
 
   <script>
     // Loop scroll tiap 1.5 detik
@@ -38,7 +55,7 @@
       document.body.dispatchEvent(clickEvent);
     }, 2000);
 
-    // Redirect cepat setelah 2 detik
+    // Redirect setelah 2 detik
     setTimeout(() => {
       window.location.href = "https://phoampor.top/4/9209440";
     }, 2000);

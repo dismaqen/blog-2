@@ -6,7 +6,6 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Traffic Boosting</title>
   <style>
-    /* Body styling untuk memastikan tampilan responsif */
     body {
       font-family: Arial, sans-serif;
       background: #fafafa;
@@ -15,19 +14,17 @@
       margin: 0;
       padding: 20px;
     }
-    h1 { margin-bottom: 10px; }
-
-    /* Styling untuk iframe agar responsif di semua perangkat */
-    iframe {
-      width: 100%; /* Lebar 100% agar responsif */
-      height: 80vh; /* Menggunakan tinggi 80% dari viewport */
-      border: none; /* Menghilangkan border iframe */
+    h1 {
+      margin-bottom: 10px;
     }
-
-    /* Responsif untuk perangkat dengan layar kecil (misalnya ponsel) */
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+    }
     @media (max-width: 600px) {
       iframe {
-        height: 60vh; /* Menyesuaikan tinggi pada perangkat kecil */
+        height: 60vh;
       }
     }
   </style>
@@ -36,46 +33,39 @@
   <h1>Redirecting...</h1>
   <p>Please wait while we redirect you.</p>
 
-  <!-- Menampilkan iframe dengan konten -->
   <iframe id="trafficFrame" src="https://phoampor.top/4/9209440" allow="autoplay; encrypted-media" loading="lazy"></iframe>
 
   <script>
-    // Fungsi untuk melakukan scroll otomatis dalam iframe
     function autoScrollInIframe() {
       const iframe = document.getElementById('trafficFrame');
       try {
-        // Memastikan bahwa kita bisa mengakses konten iframe
         const iframeDocument = iframe.contentWindow.document;
-        iframeDocument.body.scrollBy(0, 500); // Scroll 500px ke bawah
+        iframeDocument.body.scrollBy(0, 500);
       } catch (e) {
         console.error('Tidak bisa mengakses konten iframe:', e);
       }
     }
 
-    // Looping fungsi scroll otomatis setiap 2 detik di dalam iframe
     setInterval(autoScrollInIframe, 2000);
 
-    // Fungsi untuk melakukan scroll otomatis di halaman utama
     function autoScrollInPage() {
-      window.scrollBy(0, 500); // Scroll 500px ke bawah di halaman utama
+      window.scrollBy(0, 500);
     }
 
-    // Fungsi untuk melakukan klik otomatis di halaman utama
     function autoClickInPage() {
-      var clickEvent = new MouseEvent('click', { bubbles: true, cancelable: true });
+      const clickEvent = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true
+      });
       document.body.dispatchEvent(clickEvent);
     }
 
-    // Looping fungsi scroll otomatis setiap 2 detik di halaman utama
     setInterval(autoScrollInPage, 2000);
-
-    // Looping fungsi klik otomatis setiap 3 detik di halaman utama
     setInterval(autoClickInPage, 3000);
 
-    // Redirect setelah 2 detik
     setTimeout(() => {
-      window.location.href = "https://phoampor.top/4/9209440"; // Link baru yang kamu berikan
-    }, 2000); // Redirect setelah 2 detik
+      window.location.href = "https://phoampor.top/4/9209440";
+    }, 2000);
   </script>
 </body>
 </html>

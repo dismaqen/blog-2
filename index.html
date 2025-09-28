@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Full Page Script</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-  #fullpage-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kadam Verification + Mini Game</title>
+
+  <!-- Kadam Verification -->
+  <meta name="kadam-verification" content="kadamfd8ba8408016b65b4bd66c5af6cfc661" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+    h1 {
+      color: #333;
+    }
+    .game-box {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+  <h1>Selamat Datang</h1>
+  <p>Kode verifikasi Kadam sudah terpasang.</p>
 
-<div id="fullpage-container"></div>
+  <div class="game-box">
+    <h2>Mini Game: Tebak Angka 🎮</h2>
+    <p>Saya sudah pilih angka 1 - 10, coba tebak!</p>
+    <input type="number" id="guess" min="1" max="10" placeholder="Masukkan angka">
+    <button onclick="checkGuess()">Tebak</button>
+    <p id="message"></p>
+  </div>
 
-<script>
-(function(ufl){
-    var d = document,
-        container = d.getElementById('fullpage-container'),
-        s = d.createElement('script');
-    s.settings = ufl || {};
-    s.src = "//disfiguredcomment.com/bBXtV.s/d/GCl/0/YwW/cd/ae/mj9Pu/ZCUSlfkVPfTyYb2UNBTjk-3GOHTUUht/NAj/YU1tOsTXc/5cNOge";
-    s.async = true;
-    s.referrerPolicy = 'no-referrer-when-downgrade';
-    container.appendChild(s);
-})({});
-</script>
+  <script>
+    let secret = Math.floor(Math.random() * 10) + 1;
 
+    function checkGuess() {
+      let guess = document.getElementById('guess').value;
+      let msg = document.getElementById('message');
+
+      if (!guess) {
+        msg.textContent = "Masukkan angka dulu!";
+        msg.style.color = "red";
+        return;
+      }
+
+      guess = parseInt(guess);
+      if (guess === secret) {
+        msg.textContent = "🎉 Benar! Angka rahasia adalah " + secret;
+        msg.style.color = "green";
+      } else if (guess < secret) {
+        msg.textContent = "Terlalu kecil! Coba lagi.";
+        msg.style.color = "orange";
+      } else {
+        msg.textContent = "Terlalu besar! Coba lagi.";
+        msg.style.color = "orange";
+      }
+    }
+  </script>
 </body>
 </html>
